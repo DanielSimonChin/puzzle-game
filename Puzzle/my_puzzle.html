@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <title>Puzzle Game</title>
+        <link type="text/css" rel="stylesheet" href="style/style.css">
+
+    </head>
+    <body>
+        <header>
+            <h1>My Puzzle Game</h1>
+        </header>
+    
+        <section>
+            <div class="tab">
+                <button id="PlayerInfoBtn" class= "tablinks">Player Info</button>
+                <button id="GameStatsBtn" class= "tablinks">Game Stats</button>
+            </div>
+            
+            <div>
+                <label>Game Setup</label>
+
+                <fieldset>
+                    <legend>Game Info/Settings</legend>
+
+                    <label>Plauer Name</label>
+                    <input id="NameInput" type="text">
+
+                    <label>Puzzle Dimension</label>
+                    <select id="DimensionList">
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+
+                    <button id="PlayBtn">Play Now</button>
+                    <button id="CancelBtn">Cancel Now</button>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Game Progress</legend>
+
+                    <label id="MovesLabel">Moves</label>
+                    <label id="SecondsLabel">Sec</label>
+                    <label id="MinutesLabel">Min</label>
+                    <label id="HoursLabel">Hrs</label>
+
+                    <input type="text" id="DisplayMoves">
+                    <input type="text" id="DisplaySeconds">
+                    <input type="text" id="DisplayMinutes">
+                    <input type="text" id="DisplayHours">
+                </fieldset>
+            </div>
+        </section>
+        
+        <section>
+            <table id="LeaderboardsTable">
+            
+            </table>
+        </section>
+    
+    
+        <footer>
+            <p>Copyright © 2020 Daniel Simon Chin (1836462), Obied Ullah (1839810)</p>
+    
+        </footer>
+    </body>
+</html>
