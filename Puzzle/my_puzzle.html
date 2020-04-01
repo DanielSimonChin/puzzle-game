@@ -8,14 +8,14 @@
         <header>
             <h1>My Puzzle Game</h1>
         </header>
-    
-        <section>
+    <div id="gameSetup">
+        <section id="leftSection">
             <div class="tab">
-                <button id="PlayerInfoBtn" class= "tablinks">Player Info</button>
-                <button id="GameStatsBtn" class= "tablinks">Game Stats</button>
+                <button id="playerInfoBtn" class= "tablinks">Player Info</button>
+                <button id="gameStatsBtn" class= "tablinks">Game Stats</button>
             </div>
             
-            <div>
+            
                 <label>Game Setup</label>
 
                 <fieldset>
@@ -31,11 +31,11 @@
                         <option value="5">5</option>
                     </select>
 
-                    <button id="PlayBtn">Play Now</button>
-                    <button id="CancelBtn">Cancel Now</button>
+                    <button id="greenButton">Play Now</button>
+                    <button id="redButton">Cancel Now</button>
                 </fieldset>
 
-                <fieldset>
+                <fieldset >
                     <legend>Game Progress</legend>
 
                     <label id="MovesLabel">Moves</label>
@@ -48,15 +48,14 @@
                     <input type="text" id="DisplayMinutes">
                     <input type="text" id="DisplayHours">
                 </fieldset>
-            </div>
         </section>
         
-        <section>
+        <section id="rightSection">
             <table id="LeaderboardsTable">
             
             </table>
         </section>
-    
+    </div>
     
         <footer>
             <p>Copyright © 2020 Daniel Simon Chin (1836462), Obied Ullah (1839810)</p>

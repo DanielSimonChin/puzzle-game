@@ -1,3 +1,58 @@
 *{
-    
+    padding: 0px; 
+    margin: 0px; 
+    box-sizing: border-box;
+}
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+header, footer  {
+    background-color: lightblue;
+    height: 15%;
+}
+
+header h1, footer p {
+    text-align: center;
+    padding-top: 100px;
+}
+legend{
+    font-size: 1.2em;
+    color: #09384e;
+	font-weight: bold;
+}
+
+label {
+    width: 40%;
+	margin: 2px;
+}
+#gameSetup{
+    height: 70%;
+}
+
+#leftSection, #rightSection {
+    border: 2px solid darkcyan; 
+    height: 100%;
+}
+
+#leftSection {
+    width: 40%;
+    float: left;
+}
+#rightSection{
+    width: 60%;
+    float: left;
+}
+#greenButton {
+    background-color: #4CAF50;
+}
+#redButton{
+    background-color:  #f44336;
+}
+#playerInfoBtn {
+    background-color: #008CBA;
+}
+#gameStatsBtn{
+    background-color: #e7e7e7;
 }
