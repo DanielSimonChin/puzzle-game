@@ -2,56 +2,62 @@
     <head>
         <title>Puzzle Game</title>
         <link type="text/css" rel="stylesheet" href="style/style.css">
+        <link type="text/css" rel="stylesheet" href="style/tabs.css">
 
     </head>
     <body>
         <header>
             <h1>My Puzzle Game</h1>
         </header>
-    <div id="gameSetup">
+    <div id="allSection">
         <section id="leftSection">
             <div class="tab">
                 <button id="playerInfoBtn" class= "tablinks">Player Info</button>
                 <button id="gameStatsBtn" class= "tablinks">Game Stats</button>
             </div>
             
-            
-                <label>Game Setup</label>
+          <div id="allFields">
+                <label id="gameSetup">Game Setup</label>
 
-                <fieldset>
-                    <legend>Game Info/Settings</legend>
-
-                    <label>Plauer Name</label>
-                    <input id="NameInput" type="text">
-
-                    <label>Puzzle Dimension</label>
-                    <select id="DimensionList">
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                    </select>
-
-                    <button id="greenButton">Play Now</button>
-                    <button id="redButton">Cancel Now</button>
+                <fieldset id="playerInfoFld">
+                        <legend>Game Info/Settings</legend>
+                    
+                        <label id="playerName">Player Name</label>
+                        <input class="inputs" id="NameInput" type="text">
+                        <br>
+                        <label id="puzzleDim">Puzzle Dimension</label>
+                        <select class="inputs" id="DimensionList">
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                        <br>
+                        <button id="greenButton">Play Now</button>
+                        <button id="redButton">Cancel Now</button>
                 </fieldset>
 
-                <fieldset >
+                <fieldset id="gameProgressFld" >
                     <legend>Game Progress</legend>
 
-                    <label id="MovesLabel">Moves</label>
-                    <label id="SecondsLabel">Sec</label>
-                    <label id="MinutesLabel">Min</label>
-                    <label id="HoursLabel">Hrs</label>
-
-                    <input type="text" id="DisplayMoves">
-                    <input type="text" id="DisplaySeconds">
-                    <input type="text" id="DisplayMinutes">
-                    <input type="text" id="DisplayHours">
+                    <label class="progressTags" id="MovesLabel">Moves</label>
+                    <label class="progressTags" id="SecondsLabel">Sec</label>
+                    <label class="progressTags" id="MinutesLabel">Min</label>
+                    <label class="progressTags" id="HoursLabel">Hrs</label>
+                    <br>
+                    <input class="progressTags" size="1" type="text" id="DisplayMoves">
+                    <input class="progressTags" size="1" type="text" id="DisplaySeconds">
+                    <input class="progressTags" size="1" type="text" id="DisplayMinutes">
+                    <input class="progressTags" size="1"type="text" id="DisplayHours">
                 </fieldset>
+              </div> 
+            <div id=gameStatsDiv>
+                <p>Code for table showing leaderboard</p>
+            
+            </div>
         </section>
         
         <section id="rightSection">
-            <table id="LeaderboardsTable">
+            <table id="gameTable">
             
             </table>
         </section>

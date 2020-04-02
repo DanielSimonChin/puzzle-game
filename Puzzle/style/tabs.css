@@ -1,0 +1,91 @@
+
+#playerInfoFld, #gameProgressFld {
+    width: 90%;
+    margin-left: 5%; 
+    height: 35%;
+    margin-top: 5px;
+    padding: 10px;
+}
+#allSection{
+    height: 70%;
+}
+
+#gameSetup{
+    font-weight: bold;
+    font-size: 20;
+    padding-left: 5%;
+    
+}
+
+#leftSection, #rightSection {
+    border: 2px solid darkcyan; 
+    height: 100%;
+    
+}
+
+#leftSection {
+    width: 30%;
+    float: left;
+    background-color: lightblue;
+}
+#rightSection{
+    width: 70%;
+    float: left;
+}
+
+.tab {
+    background-color:lightgray;
+    height:10%;
+}
+
+#greenButton {
+    background-color: #4CAF50;
+    font-size: 24px; 
+    color: white;
+    padding: 10px 24px;
+    cursor: pointer;
+    margin-top: 5%;
+    
+    
+}
+#redButton{
+    background-color:  #f44336;
+    font-size: 24px;
+    color: white;
+    padding: 10px 24px;
+    cursor: pointer;
+}
+#playerInfoBtn {
+    background-color: #008CBA;
+    text-align: center;
+    height: 100%;
+    width:120px;
+    cursor: pointer;
+}
+#gameStatsBtn{
+    background-color: #e7e7e7;
+    text-align: center;
+    height: 100%;
+    width:120px;
+    cursor: pointer;
+}
+#playerName,#puzzleDim{
+    margin: 10px;
+}
+.inputs{
+    margin:10px;
+}
+.progressTags{
+    position: relative;
+    top:50px;
+    margin-top: 5px;
+}
+#SecondsLabel,#DisplaySeconds{
+    margin-left:50px;
+}
+#MinutesLabel,#DisplayMinutes{
+    margin-left:50px;
+}
+#HoursLabel,#DisplayHours{
+    margin-left:50px;
+}

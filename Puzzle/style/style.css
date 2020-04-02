@@ -17,42 +17,24 @@ header h1, footer p {
     text-align: center;
     padding-top: 100px;
 }
+
 legend{
     font-size: 1.2em;
     color: #09384e;
 	font-weight: bold;
+    margin-left: 5px;
+
 }
 
 label {
     width: 40%;
 	margin: 2px;
 }
-#gameSetup{
-    height: 70%;
-}
 
-#leftSection, #rightSection {
-    border: 2px solid darkcyan; 
+ /*checkboardId {
+    float: left;
+	width: 100%;
     height: 100%;
-}
+} */
 
-#leftSection {
-    width: 40%;
-    float: left;
-}
-#rightSection{
-    width: 60%;
-    float: left;
-}
-#greenButton {
-    background-color: #4CAF50;
-}
-#redButton{
-    background-color:  #f44336;
-}
-#playerInfoBtn {
-    background-color: #008CBA;
-}
-#gameStatsBtn{
-    background-color: #e7e7e7;
-}
+#
