@@ -31,11 +31,7 @@
 #rightSection{
     width: 70%;
     float: left;
-}
-
-.tab {
-    background-color:lightgray;
-    height:10%;
+    background-color: gainsboro;
 }
 
 #greenButton {
@@ -45,8 +41,6 @@
     padding: 10px 24px;
     cursor: pointer;
     margin-top: 5%;
-    
-    
 }
 #redButton{
     background-color:  #f44336;
@@ -69,33 +63,18 @@
     width:120px;
     cursor: pointer;
 }
-#playerName,#puzzleDim,.inputs{
-    margin: 10px;
+#playerName,#puzzleDim,#nameInput,#dimensionList{;
+    margin:2px;
 }
 
-.progressTags{
-    /*display: inline-block;
-    position: relative;
-    top:50px;
-    position: relative;
-    float: left;
-    text-align: center;
-    width: 25%;
-    margin-top: 5px;
-    */
-    position: relative;
-    top:50px;
-}
-#SecondsLabel,#DisplaySeconds{
+#secondsLabel,#displaySeconds{
     margin-left:50px;
 }
-#MinutesLabel,#DisplayMinutes{
+#minutesLabel,#displayMinutes{
     margin-left:50px;
 }
-#HoursLabel,#DisplayHours{
+#hoursLabel,#displayHours{
     margin-left:50px;
 }
-.progressTags input{
-    width: 20px;
-}
+
 

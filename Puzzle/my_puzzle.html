@@ -3,76 +3,74 @@
         <title>Puzzle Game</title>
         <link type="text/css" rel="stylesheet" href="style/style.css">
         <link type="text/css" rel="stylesheet" href="style/tabs.css">
-
+        <script src="js/puzzle.js"> </script>
+        <script src="js/tabs.js"> </script>
     </head>
     <body>
         <header>
             <h1>My Puzzle Game</h1>
         </header>
-    <div id="allSection">
-        <section id="leftSection">
-            <div class="tab">
-                <button id="playerInfoBtn" class= "tablinks">Player Info</button>
-                <button id="gameStatsBtn" class= "tablinks">Game Stats</button>
-            </div>
-            
-          <div id="allFields">
-                <label id="gameSetup">Game Setup</label>
 
-                <fieldset id="playerInfoFld">
+        <div id="allSection">
+            <section id="leftSection">
+                <div class="tab">
+                    <button id="playerInfoBtn" class="tablinks">Player Info</button>
+                    <button id="gameStatsBtn" class="tablinks">Game Stats</button>
+                </div>
+
+                <div id="allFields">
+                    <label id="gameSetup">Game Setup</label>
+
+                    <fieldset id="playerInfoFld">
                         <legend>Game Info/Settings</legend>
-                    
+
                         <label id="playerName">Player Name</label>
-                        <input class="inputs" id="NameInput" type="text">
+                        <input id="nameInput" type="text">
                         <br>
                         <label id="puzzleDim">Puzzle Dimension</label>
-                        <select class="inputs" id="DimensionList">
+                        <select id="dimensionList">
                             <option value="3">3</option>
                             <option value="4">4</option>
                             <option value="5">5</option>
                         </select>
                         <br>
-                        <button id="greenButton">Play Now</button>
-                        <button id="redButton">Cancel Now</button>
-                </fieldset>
+                        <button disabled=true id="greenButton">Play Now</button>
+                        <button disabled=true id="redButton">Cancel Now</button>
+                    </fieldset>
 
-                <fieldset id="gameProgressFld" >
-                    <legend>Game Progress</legend>
+                    <fieldset id="gameProgressFld">
+                        <legend>Game Progress</legend>
 
-                    <label class="progressTags" id="MovesLabel">Moves</label>
-                    <label class="progressTags" id="SecondsLabel">Sec</label>
-                    <label class="progressTags" id="MinutesLabel">Min</label>
-                    <label class="progressTags" id="HoursLabel">Hrs</label>
-                    <br>
-                    <input class="progressTags" size="1" type="text" id="DisplayMoves">
-                    <input class="progressTags" size="1" type="text" id="DisplaySeconds">
-                    <input class="progressTags" size="1" type="text" id="DisplayMinutes">
-                    <input class="progressTags" size="1"type="text" id="DisplayHours">
-                </fieldset>
-              </div> 
-            <div id=gameStatsDiv>
-                <label>Leaderboards</label>
-                <table id="leaderboards">
-                    <th>Name</th><th>Moves</th><th>Time</th>
-                    <tr>
-                        <td>bob</td>
-                        <td>10</td>
-                        <td>10m</td>
-                    </tr>
+                        <label id="movesLabel">Moves</label>
+                        <label id="secondsLabel">Sec</label>
+                        <label id="minutesLabel">Min</label>
+                        <label id="hoursLabel">Hrs</label>
+                        <br>
+                        <input size="1" type="text" id="displayMoves">
+                        <input size="1" type="text" id="displaySeconds">
+                        <input size="1" type="text" id="displayMinutes">
+                        <input size="1" type="text" id="displayHours">
+                    </fieldset>
+                </div>
+                
+                <div id=leaderboards>
+                    <table id="leaderboardsTable">
+                        <th>Name</th><th>Moves</th><th>Time</th>
+                        <tr>
+                            <td>Bob</td><td>10</td><td>5m</td>
+                        </tr>
+                    </table>
+                </div>
+                
+            </section>
+
+            <section id="rightSection">
+                <table id="gameTable">
                 </table>
-            
-            </div>
-        </section>
-        
-        <section id="rightSection">
-            <table id="gameTable">
-            </table>
-        </section>
-    </div>
-    
+            </section>
+        </div>
         <footer>
-            <p>Copyright © 2020 Daniel Simon Chin (1836462), Obied Ullah (1839810)</p>
-    
+                <p>Copyright © 2020 Daniel Simon Chin (1836462), Obied Ullah (1839810)</p>
         </footer>
     </body>
 </html>
