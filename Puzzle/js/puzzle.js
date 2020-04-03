@@ -60,8 +60,10 @@ function createPuzzle() {
 
 ///////////////////// all Helper methods
 
-function generateRandomNumber(minValue, maxValue){
-  Math.floor(Math.random() * (maxValue-minValue)) + minValue;
+function generateRandomNumber(minValue, maxValue)
+{
+  //taken from w3schools at https://www.w3schools.com/js/js_random.asp
+  return Math.floor(Math.random() * (maxValue - minValue + 1) ) + minValue;
 }
 
 function playAudio(){ //not completed
@@ -110,6 +112,95 @@ function checkFormFilled()
 function enableButton(btnId, theStatus, btnClass)
 {
 
+}
+
+//5.3 Tile
+function Tile(row,col,indexNumber)
+{
+  this.row = row;
+  this.col = col;
+  //emptyTile(for 0) or filledType(for the rest)
+  this.tileType = checkTileType(indexNumber);
+  //if 3x3 board (0-8)
+  this.indexNumber = indexNumber;
+}
+
+function checkTileType(num)
+{
+  var result;
+  if(num == 0)
+  {
+    result = "emptyTile";
+  }
+  else
+  {
+    result = "filledType";
+  }
+  return result;
+}
+
+//5.4 PuzzleGame
+function PuzzleGame()
+{
+  //calls its function members to set the fields
+  this.puzzleWidth = document.getElementById('dimensionList').value;
+  this.puzzleBoard = [];
+  this.goalState = createGoalState();
+}
+//5.4 PuzzleGame member
+function createGoalState()
+{
+  var puzzleWidth = document.getElementById('dimensionList').value;
+  var resultPuzzleBoard = [];
+  if (puzzleWidth == 3)
+  {
+    resultPuzzleBoard = [[1,2,3],[4,5,6],[7,8,0]];
+  }
+  else if (puzzleWidth == 4)
+  {
+    resultPuzzleBoard = [[1,2,3,4],[5,6,7,8],[9,10,11,12],[13,14,15,0]];
+  }
+  else
+  {
+    resultPuzzleBoard = [[1,2,3,4,5],[6,7,8,9,10],[11,12,13,14,15],[16,17,18,19,20],[21,22,23,24,0]];
+  }
+  return resultPuzzleBoard;
+}
+
+//5.4 PuzzleGame member
+function createBoardStructure()
+{
+  var puzzleWidth = document.getElementById('dimensionList').value;
+  var puzzleArr = [];
+  //TODO
+  var indexes;
+  if (puzzleWidth == 3)
+  {
+    indexes = [0,1,2,3,4,5,6,7,8];
+  }
+  else if (puzzleWidth == 4)
+  {
+    indexes = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
+  }
+  else
+  {
+    indexes = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24];
+  }
+
+  for(var i = 0; i < puzzleWidth; i++)
+  {
+    puzzleArr[i] = [];
+    for(var j = 0 ; j < puzzleWidth;j++)
+    {
+      //the number from indexes that will be placed in the array
+      var positionRemove = generateRandomNumber(0,indexes.length-1);
+      //remove the value at that index and store it into the variable
+      var removedValue = indexes.splice(positionRemove,1);
+      //creating the Tile object and placing it
+      puzzleArr[i][j] = new Tile(i,j,removedValue);
+    }
+  }
+  return puzzleArr;
 }
 
 function process() {
