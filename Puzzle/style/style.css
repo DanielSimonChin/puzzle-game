@@ -21,38 +21,76 @@ legend{
     font-size: 1.2em;
     color: #09384e;
 	font-weight: bold;
+    padding-top: 5%;
+    padding-bottom: 5%;
 }
 
 label {
     width: 40%;
 	margin: 2px;
 }
-#gameSetup{
+#playerInfoFld, #gameStatsFld {
+    width: 90%;
+    margin-left: 5%; 
+    
+}
+#allSection{
     height: 70%;
+}
+
+#gameSetup{
+    font-weight: bold;
+    font-size: 20;
+    padding: 2%;
+    
 }
 
 #leftSection, #rightSection {
     border: 2px solid darkcyan; 
     height: 100%;
+    
 }
 
 #leftSection {
     width: 40%;
     float: left;
+    background-color: lightblue;
 }
 #rightSection{
     width: 60%;
     float: left;
 }
+
+.tab {
+    background-color:lightgray;
+    height:10%;
+}
+
 #greenButton {
     background-color: #4CAF50;
+    font-size: 20px; 
+    
 }
 #redButton{
     background-color:  #f44336;
+    font-size: 20px;
 }
 #playerInfoBtn {
     background-color: #008CBA;
+    text-align: center;
+    height: 50px;
+    width:100px;
 }
 #gameStatsBtn{
     background-color: #e7e7e7;
+    text-align: center;
+    padding: 2%;
 }
+
+ /*checkboardId {
+    float: left;
+	width: 100%;
+    height: 100%;
+} */
+
+#
