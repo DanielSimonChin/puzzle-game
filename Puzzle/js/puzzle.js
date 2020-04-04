@@ -1,6 +1,7 @@
 var listPlayerArr = []; //list of all players
 var moveCount; // amount of moves it took the player at end of game
 var gameWon; //if the currentplayer has won the game
+var puzzleGameObj;
 //constructor
 function Player(moves, status) {
   var name = document.getElementById("nameInput");
@@ -25,7 +26,7 @@ function wonGame() {
 
 }
 
-function createPuzzle() {
+/*function createPuzzle() {
 
   var tableBegin = '<table border="thick">'
 
@@ -55,7 +56,7 @@ function createPuzzle() {
   }
   var tableEnding = "</table>"
   document.getElementbyId('gameTable').innerHtml = tableBegin + tr_heading + content + tableEnding;
-}
+}*/
 
 ///////////////////// all Helper methods
 
@@ -193,7 +194,7 @@ function createBoardStructure() {
   return puzzleArr;
 }
 
-function drawPuzzleBoard(puzzleGameObj) {
+function drawPuzzleBoard() {
   var puzzleBoardDiv = document.createElement('div');
   puzzleBoardDiv.class = "puzzleBoard";
 
@@ -204,22 +205,110 @@ function drawPuzzleBoard(puzzleGameObj) {
     htmlRows += "<tr>";
     for (var j = 0; j < puzzleGameObj.puzzleWidth; j++) {
       //appending all the array elements
-      htmlRows += "<td>" + puzzleGameObj.puzzleBoard[i][j].indexNumber + "</td>";
+      htmlRows += "<td>" + "<button>" + puzzleGameObj.puzzleBoard[i][j].indexNumber + "</button>" + "</td>";
     }
     htmlRows += "</tr>";
   }
   puzzleBoardDiv.innerHTML = htmlTable + htmlRows + "</table>";
-
   //appending the puzzleBoard div to the checkBoardId div
   document.getElementById('checkBoardId').appendChild(puzzleBoardDiv);
 }
+//helper that takes as input the value that is on the table
+//works,tested in console
+function findTile(indexNumber)
+{
+  var coordinate = [];
+  for(var i = 0 ; i < puzzleGameObj.puzzleBoard.length;i++)
+  {
+    for(var j = 0 ; j < puzzleGameObj.puzzleBoard[i].length;j++)
+    {
+      if(puzzleGameObj.puzzleBoard[i][j].indexNumber == indexNumber)
+      {
+        coordinate = [i,j];
+        return coordinate;
+      }
+    }
+  }
+}
+
+function swap2Tiles(indexTile1,indexTile2)
+{
+
+}
+//works, tested in console
+function match2States(state1,state2)
+{
+  for(var i = 0; i < state1.length; i++)
+  {
+    for(var j = 0 ; j < state1[i].length; j++)
+    {
+      if(state1[i][j] != state2[i][j])
+      {
+        return false;
+      }
+    }
+  }
+  return true;
+}
+//returns indexNumber properties of the tiles surounding the tile at "position" ex:[0,2]
+function getNeighboursIndicesArr(position)
+{
+  var returnValues = [];
+
+  var north = [position[0]-1,position[1]];
+  if(north[0] < 0 || north[1] < 0 || north[0] >= puzzleGameObj.puzzleWidth || north[1] >= puzzleGameObj.puzzleWidth)
+  {
+    returnValues[0] = -1;
+  }
+  else
+  {
+    returnValues[0] = puzzleGameObj[north[0]][north[1]].indexNumber;
+  }
+  var east = [position[0],position[1]+1];
+  if(east[0] < 0 || east[1] < 0 || east[0] >= puzzleGameObj.puzzleWidth || east[1] >= puzzleGameObj.puzzleWidth)
+  {
+    returnValues[1] = -1;
+  }
+  else
+  {
+    returnValues[1] = puzzleGameObj[east[0]][east[1]].indexNumber;
+  }
+  var south = [position[0]+1,position[1]];
+  if(south[0] < 0 || south[1] < 0 || south[0] >= puzzleGameObj.puzzleWidth || south[1] >= puzzleGameObj.puzzleWidth)
+  {
+    returnValues[2] = -1;
+  }
+  else
+  {
+    returnValues[2] = puzzleGameObj[south[0]][south[1]].indexNumber;
+  }
+  var west = [position[0],position[1]-1];
+  if(west[0] < 0 || west[1] < 0 || west[0] >= puzzleGameObj.puzzleWidth || west[1] >= puzzleGameObj.puzzleWidth)
+  {
+    returnValues[3] = -1;
+  }
+  else
+  {
+    returnValues[3] = puzzleGameObj[west[0]][west[1]].indexNumber;
+  }
+  return returnValues;
+}
+function processClickTile(indexValue)
+{
+  //finds position of tile
+  var position = findTile(indexValue);
+
+
+}
+
+
 
 function process() {
   //document.getElementById("nameInput").addEventListener("input", checkFormFilled);
   //document.getElementById("greenButton").addEventListener("click", playGame);
   //document.getElementById("redButton").addEventListener("click", cancelGame);
-  var game = new PuzzleGame();
-  drawPuzzleBoard(game);
+  puzzleGameObj = new PuzzleGame();
+  drawPuzzleBoard();
 
 }
 
