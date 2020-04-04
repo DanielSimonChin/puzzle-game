@@ -1,111 +1,129 @@
-*{
-    padding: 0px;
-    margin: 0px;
-    box-sizing: border-box;
-}
-html, body {
-    height: 100%;
-    width: 100%;
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
 }
 
-header, footer  {
-    background-color: lightblue;
-    height: 15%;
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+header, footer {
+  background-color: lightblue;
+  height: 15%;
 }
 
 header h1, footer p {
-    text-align: center;
-    padding-top: 100px;
+  text-align: center;
+  padding-top: 5%;
+  position: relative;
 }
 
-legend{
-    font-size: 1.2em;
-    color: #09384e;
-	font-weight: bold;
-    margin-left: 5px;
-    padding-top: 5%;
-    padding-bottom: 5%;
-
+legend {
+  font-size: 1.2em;
+  color: #09384e;
+  font-weight: bold;
+  margin-left: 5px;
+  padding-top: 5%;
+  padding-bottom: 5%;
 }
 
 label {
-    width: 40%;
-	margin: 2px;
+  width: 40%;
+  margin: 2px;
 }
 
-
- /*checkboardId {
+/*checkboardId {
     float: left;
 	width: 100%;
     height: 100%;
 } */
-
-
-#playerInfoFld, #gameStatsFld {
-    width: 90%;
-    margin-left: 5%;
-
-}
-#allSection{
-    height: 70%;
+#playerInfoFld, #gameStatsFld, #gameProgressFld {
+  width: 90%;
+  margin-left: 5%;
+  padding: 3%;
 }
 
-#gameSetup{
-    font-weight: bold;
-    font-size: 20;
-    padding: 2%;
+#allSection {
+  height: 70%;
+}
 
+#gameSetup {
+  font-weight: bold;
+  font-size: 20;
+  padding: 2%;
 }
 
 #leftSection, #rightSection {
-    border: 2px solid darkcyan;
-    height: 100%;
-
-}
-
-#leftSection {
-    width: 40%;
-    float: left;
-    background-color: lightblue;
-}
-#rightSection{
-    width: 60%;
-    float: left;
-}
-
-.tab {
-    background-color:lightgray;
-    height:10%;
-}
-
-#greenButton {
-    background-color: #4CAF50;
-    font-size: 20px;
-
-}
-#redButton{
-    background-color:  #f44336;
-    font-size: 20px;
-}
-#playerInfoBtn {
-    background-color: #008CBA;
-    text-align: center;
-    height: 50px;
-    width:100px;
-}
-#gameStatsBtn{
-    background-color: #e7e7e7;
-    text-align: center;
-    padding: 2%;
-}
-#checkBoardId{
-  float: left;
-  width: 100%;
+  border: 2px solid darkcyan;
   height: 100%;
 }
 
- /*checkboardId {
-    float: left;
-	width: 100%;
-    height: 100%;
-} */
+#leftSection {
+  width: 40%;
+  float: left;
+  background-color: lightblue;
+}
+
+#rightSection {
+  width: 60%;
+  float: left;
+}
+
+#greenButton:disabled {
+  background-color: green;
+  opacity: 0.5;
+  cursor: default;
+}
+
+#redButton:disabled {
+  background-color: red;
+  opacity: 0.5;
+  cursor: default;
+}
+
+#checkBoardId {
+  float: left;
+  width: 100%;
+  height: 100%;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+
+.tab {
+  background-color: lightgray;
+  height: 10%;
+}
+.puzzleBoard {
+  margin: 1px;
+  border: 3px solid black;
+  padding: 2px;
+  width:100%;
+  height:100%;
+}
+
+.filledType, .emptyTile {
+  
+	text-align: center;
+	display: table-cell;
+	vertical-align: middle;
+	background-color: #77B3ED;
+	border: 2px solid #404c50;
+	color:white;
+	font-weight: bold;
+  font-size: 40px;
+}
+#puzzleTable{
+  width: 100%;
+  height: 100%;
+  table-layout: fixed;
+}
+
+
+.emptyTile {
+  background-color: #afd9ec;
+  color: #afd9ec;
+}

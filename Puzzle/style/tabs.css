@@ -1,80 +1,99 @@
-
-#playerInfoFld, #gameProgressFld {
-    width: 90%;
-    margin-left: 5%; 
-    height: 35%;
-    margin-top: 5px;
-    padding: 10px;
-}
-#allSection{
-    height: 70%;
+#allSection {
+  height: 70%;
 }
 
-#gameSetup{
-    font-weight: bold;
-    font-size: 20;
-    padding-left: 5%;
-    
+#gameSetup {
+  font-weight: bold;
+  font-size: 20;
+  padding-left: 5%;
 }
 
 #leftSection, #rightSection {
-    border: 2px solid darkcyan; 
-    height: 100%;
-    
+  border: 2px solid darkcyan;
+  height: 100%;
 }
 
 #leftSection {
-    width: 30%;
-    float: left;
-    background-color: lightblue;
+  width: 30%;
+  float: left;
+  background-color: lightblue;
 }
-#rightSection{
-    width: 70%;
-    float: left;
-    background-color: gainsboro;
+
+#rightSection {
+  width: 70%;
+  float: left;
+  background-color: gainsboro;
 }
 
 #greenButton {
-    background-color: #4CAF50;
-    font-size: 24px; 
-    color: white;
-    padding: 10px 24px;
-    cursor: pointer;
-    margin-top: 5%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 7% 7%;
+  cursor: pointer;
+  margin-top: 1%;
+  width: 45%;
+  margin-bottom: 1%;
 }
-#redButton{
-    background-color:  #f44336;
-    font-size: 24px;
-    color: white;
-    padding: 10px 24px;
-    cursor: pointer;
+
+#redButton {
+  background-color: #f44336;
+  color: white;
+  padding: 7% 7%;
+  cursor: pointer;
+  width: 45%;
+  margin-bottom: 1%;
 }
+
 #playerInfoBtn {
-    background-color: #008CBA;
-    text-align: center;
-    height: 100%;
-    width:120px;
-    cursor: pointer;
-}
-#gameStatsBtn{
-    background-color: #e7e7e7;
-    text-align: center;
-    height: 100%;
-    width:120px;
-    cursor: pointer;
-}
-#playerName,#puzzleDim,#nameInput,#dimensionList{;
-    margin:2px;
+  background-color: #008CBA;
+  text-align: center;
+  height: 100%;
+  width: 35%;
+  cursor: pointer;
 }
 
-#secondsLabel,#displaySeconds{
-    margin-left:50px;
-}
-#minutesLabel,#displayMinutes{
-    margin-left:50px;
-}
-#hoursLabel,#displayHours{
-    margin-left:50px;
+#gameStatsBtn {
+  background-color: #e7e7e7;
+  text-align: center;
+  height: 100%;
+  width: 35%;
+  cursor: pointer;
 }
 
+#playerName, #puzzleDim, #nameInput, #dimensionList {
+  margin: 2px;
+  
+}
 
+#hoursLabel, #minutesLabel, #secondsLabel {
+  margin-left: 9%;
+  margin-right: 7%;
+  width: 10%;
+}
+
+#displayHours, #displayMinutes, #displaySeconds {
+  width: 10%;
+  margin-left: 10%;
+}
+
+#displayMoves {
+  width: 10%;
+}
+
+#leaderboards {
+  display: none;
+  float: left;
+  width: 100%;
+  height: 100%;
+}
+
+#leaderboardsTable, #leaderboardsTable td, #leaderboards th {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  border: 3px solid black;
+  text-align: center;
+}
+#headerID{
+  width: 10%;
+}
