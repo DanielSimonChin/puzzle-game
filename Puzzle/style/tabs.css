@@ -1,0 +1,98 @@
+#gameSetup {
+  font-weight: bold;
+  font-size: 20;
+  padding-left: 5%;
+}
+
+#playerInfoFld, #gameStatsFld, #gameProgressFld {
+  width: 90%;
+  margin-left: 5%;
+  padding: 3%;
+}
+
+/* CSS for the different buttons */
+#greenButton {
+  background-color: #4CAF50;
+  color: white;
+  padding: 7% 7%;
+  cursor: pointer;
+  margin-top: 1%;
+  width: 45%;
+  margin-bottom: 1%;
+}
+
+#redButton {
+  background-color: #f44336;
+  color: white;
+  padding: 7% 7%;
+  cursor: pointer;
+  width: 45%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+
+#playerInfoBtn {
+  background-color: #008CBA;
+  text-align: center;
+  height: 100%;
+  width: 35%;
+  cursor: pointer;
+}
+
+#gameStatsBtn {
+  background-color: #e7e7e7;
+  text-align: center;
+  height: 100%;
+  width: 35%;
+  cursor: pointer;
+}
+
+#greenButton:disabled {
+  background-color: green;
+  opacity: 0.5;
+  cursor: default;
+}
+
+#redButton:disabled {
+  background-color: red;
+  opacity: 0.5;
+  cursor: default;
+}
+
+/* CSS for displayting the Game Progress */
+#playerName, #puzzleDim, #nameInput, #dimensionList {
+  margin: 2px;
+}
+
+#hoursLabel, #minutesLabel, #secondsLabel, #movesLabel, #displayHours, #displayMinutes, #displaySeconds, #displayMoves {
+  display: inline-block;
+  margin-left: 9%;
+  width: 12%;
+}
+
+/* CSS for the leaderboard in game stats */
+#leaderboards {
+  display: none;
+  float: left;
+  width: 100%;
+  height: 100%;
+}
+
+#leaderboardsTable, #leaderboardsTable td, #leaderboards th {
+  table-layout: fixed;
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  border: 3px solid black;
+  text-align: center;
+  max-width: 100%;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* CSS for the two tabs */
+.tab {
+  background-color: lightgray;
+  height: 10%;
+}

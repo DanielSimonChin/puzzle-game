@@ -1,0 +1,89 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+header, footer {
+  background-color: lightblue;
+  height: 15%;
+  position: relative;
+}
+
+header h1, footer p {
+  text-align: center;
+  padding-top: 3%;
+}
+
+legend {
+  font-size: 1.2em;
+  color: #09384e;
+  font-weight: bold;
+  margin-left: 5px;
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+
+/* CSS for different sections */
+#allSection {
+  height: 70%;
+  position: relative;
+}
+
+#leftSection, #rightSection {
+  border: 2px solid darkcyan;
+  height: 100%;
+}
+
+#leftSection {
+  width: 30%;
+  float: left;
+  background-color: lightblue;
+}
+
+#rightSection {
+  width: 70%;
+  float: left;
+  background-color: gainsboro;
+}
+
+/*CSS for puzzle game table */
+#checkBoardId {
+  float: left;
+  width: 100%;
+  height: 100%;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+
+#puzzleTable {
+  width: 100%;
+  height: 100%;
+  table-layout: fixed;
+}
+
+.puzzleBoard {
+  margin: 1px;
+  border: 3px solid black;
+  padding: 2px;
+  width: 100%;
+  height: 100%;
+}
+
+.filledType, .emptyTile {
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+  background-color: #77B3ED;
+  border: 2px solid #404c50;
+  color: white;
+  font-weight: bold;
+  font-size: 40px;
+}
+
+.emptyTile {
+  background-color: #afd9ec;
+  color: #afd9ec;
+}
