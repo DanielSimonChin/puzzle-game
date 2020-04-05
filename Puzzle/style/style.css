@@ -4,20 +4,15 @@
   box-sizing: border-box;
 }
 
-html, body {
-  height: 100%;
-  width: 100%;
-}
-
 header, footer {
   background-color: lightblue;
   height: 15%;
+  position: relative;
 }
 
 header h1, footer p {
   text-align: center;
-  padding-top: 5%;
-  position: relative;
+  padding-top: 3%;
 }
 
 legend {
@@ -29,30 +24,10 @@ legend {
   padding-bottom: 5%;
 }
 
-label {
-  width: 40%;
-  margin: 2px;
-}
-
-/*checkboardId {
-    float: left;
-	width: 100%;
-    height: 100%;
-} */
-#playerInfoFld, #gameStatsFld, #gameProgressFld {
-  width: 90%;
-  margin-left: 5%;
-  padding: 3%;
-}
-
+/* CSS for different sections */
 #allSection {
   height: 70%;
-}
-
-#gameSetup {
-  font-weight: bold;
-  font-size: 20;
-  padding: 2%;
+  position: relative;
 }
 
 #leftSection, #rightSection {
@@ -61,28 +36,18 @@ label {
 }
 
 #leftSection {
-  width: 40%;
+  width: 30%;
   float: left;
   background-color: lightblue;
 }
 
 #rightSection {
-  width: 60%;
+  width: 70%;
   float: left;
+  background-color: gainsboro;
 }
 
-#greenButton:disabled {
-  background-color: green;
-  opacity: 0.5;
-  cursor: default;
-}
-
-#redButton:disabled {
-  background-color: red;
-  opacity: 0.5;
-  cursor: default;
-}
-
+/*CSS for puzzle game table */
 #checkBoardId {
   float: left;
   width: 100%;
@@ -93,35 +58,30 @@ label {
   padding-bottom: 1%;
 }
 
-.tab {
-  background-color: lightgray;
-  height: 10%;
-}
-.puzzleBoard {
-  margin: 1px;
-  border: 3px solid black;
-  padding: 2px;
-  width:100%;
-  height:100%;
-}
-
-.filledType, .emptyTile {
-  
-	text-align: center;
-	display: table-cell;
-	vertical-align: middle;
-	background-color: #77B3ED;
-	border: 2px solid #404c50;
-	color:white;
-	font-weight: bold;
-  font-size: 40px;
-}
-#puzzleTable{
+#puzzleTable {
   width: 100%;
   height: 100%;
   table-layout: fixed;
 }
 
+.puzzleBoard {
+  margin: 1px;
+  border: 3px solid black;
+  padding: 2px;
+  width: 100%;
+  height: 100%;
+}
+
+.filledType, .emptyTile {
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+  background-color: #77B3ED;
+  border: 2px solid #404c50;
+  color: white;
+  font-weight: bold;
+  font-size: 40px;
+}
 
 .emptyTile {
   background-color: #afd9ec;

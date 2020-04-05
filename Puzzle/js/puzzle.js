@@ -26,15 +26,14 @@ function PlayerManager() {
     var name = document.getElementById("nameInput").value;
     var dim = document.getElementById("dimensionList").options[document.getElementById("dimensionList").selectedIndex].value;
     var moves = document.getElementById("displayMoves").value;
-    var duration = document.getElementById("displaySeconds").value;
-    var player = new Player(name, dim, moves, duration, theStatus);
+    var player = new Player(name, dim, this.nberMove, this.gameDuration, theStatus);
     //add player
     this.listPlayerArr.push(player);
 
     //reset stats
     this.gameCounter++;
     this.gameDuration = 0;
-    this.nberMoves = 0;
+    this.nberMove = 0;
   }
 }
 /////////////// UTILITY FUNCTIONS
@@ -50,13 +49,13 @@ function Utility() {
   this.showStats = showStats;
   this.playAudio = playAudio;
 
+ /*Generates a random integer between the minimum and maximum values */
   function generateRandomNumber(minValue, maxValue) {
     return (Math.floor(Math.random() * (maxValue - minValue + 1)) + minValue);
   }
 
-
-
-  function playAudio() { //not completed
+/* plays an audio if you won the game and plays audio if you attempt an impossible move */
+  function playAudio() {
     if (gameWon == true) {
       var audio = new Audio('sounds/Firework.mp3');
       audio.play();
@@ -78,23 +77,24 @@ function Utility() {
     return easyBoard;
   }
 
+/* calls mehods used whenever a game is stopped */
   function terminateGame(theStatus) {
-    //TODO
+
     playerManager.storeGameStats(theStatus);
-    clearInterval(chrono);
-    //document.getElementById('dimensionList').options[document.getElementById('dimensionList').selectedIndex].value = 0;
     clearDisplay();
     showStats();
   }
 
+/*Clears all the values and whats displayed  */
   function clearDisplay() {
+    clearInterval(chrono);
     chrono = undefined;
     document.getElementById('displayMoves').value = "";
     document.getElementById('displayHours').value = "";
     document.getElementById('displaySeconds').value = "";
     document.getElementById('displayMinutes').value = "";
   }
-
+  /* steps to when a game is cancelled*/
   function cancelPuzzlePlay() {
     if (gameWon == true) {
       terminateGame("success");
@@ -105,20 +105,22 @@ function Utility() {
     enableButton("greenButton", false);
   }
 
+  /* make sure the user has a name and dimension size checked */
   function checkFormFilled() {
     var dimSize = document.getElementById('dimensionList');
-
+    // also check for chrono to make sure a user doesnt change their name midway and enable the play game button
     if (document.getElementById("nameInput").value == "" || dimSize.options[dimSize.selectedIndex].value == 0 || chrono != undefined) {
       enableButton("greenButton", true);
     } else {
       enableButton("greenButton", false);
     }
   }
-
+  /* enables or disables a button, also used for labels and select  */
   function enableButton(btnId, theStatus) {
     document.getElementById(btnId).disabled = theStatus;
   }
 
+/*Creates the chrono and siaplys the time  */
   function showChrono() {
     //document.getElementById("displayMoves").value = 0;
     var sec = document.getElementById("displaySeconds");
@@ -127,12 +129,11 @@ function Utility() {
     sec.value = 0;
     min.value = 0;
     hrs.value = 0;
-    var totalTime = 0;
     chrono = setInterval(function() {
-      sec.value = totalTime++;
+      playerManager.gameDuration++;
+      sec.value++;
       if (sec.value == 60) {
         min.value++;
-        totalTime = 0;
         sec.value = 0;
         if (min.value == 60) {
           hrs.value++;
@@ -141,12 +142,12 @@ function Utility() {
       }
     }, 1000);
   }
-
+/* Dynamically create a table to show the players and their stats */
   function showStats() {
     var tableBegin = "<table>";
     var heading = "<th>#</th><th>Name</th><th>Dimension</th><th>Moves</th><th>Duration</th><th>Status</th>";
     var content = "";
-    for (var i = 1; i < playerManager.listPlayerArr.length + 1; i++) {
+    for (var i = 1; i < playerManager.listPlayerArr.length + 1; i++) { //
       content = content + "<tr>" +
         "<td>" + i + "</td>" +
         "<td>" + playerManager.listPlayerArr[i - 1].name + "</td>" +
@@ -162,24 +163,25 @@ function Utility() {
   }
 }
 
+
 function playGame() {
   document.getElementById('displayMoves').value = 0;
   utility.enableButton("redButton", false);
   utility.enableButton("greenButton", true);
-  utility.enableButton("nameInput", true);
+  utility.enableButton("nameInput", true); //player cant change name or selectedIndex during game
   utility.enableButton("dimensionList", true);
   puzzleGameObj = new PuzzleGame();
   drawPuzzleBoard();
-  document.querySelector('.puzzleBoard').style.display = 'block';
+  document.querySelector('.puzzleBoard').style.display = 'block'; //display board again when game is restarted
   setupTileClickEvent();
   utility.showChrono();
 }
 
 function cancelGame() {
   utility.cancelPuzzlePlay("cancelled");
-  utility.enableButton("nameInput", false);
+  utility.enableButton("nameInput", false); //player can change the name or input during game
   utility.enableButton("dimensionList", false);
-  document.querySelector('.puzzleBoard').style.display = 'none';
+  document.querySelector('.puzzleBoard').style.display = 'none'; //stop displaying board when game done
   puzzleGameObj = new PuzzleGame();
 }
 
@@ -209,8 +211,8 @@ function checkTileType(num) {
 function PuzzleGame() {
   //calls its function members to set the fields
   this.puzzleWidth = document.getElementById('dimensionList').value;
-  //this.puzzleBoard = createBoardStructure();
-  this.puzzleBoard = utility.sampleEasyBoardTest();
+  this.puzzleBoard = createBoardStructure();
+  //this.puzzleBoard = utility.sampleEasyBoardTest();
   this.goalState = createGoalState();
 }
 
@@ -386,7 +388,9 @@ function processClickTile(indexValue) {
 
   if (indexMoveTo != null) {
     var a = document.getElementById('displayMoves');
-    a.value++;
+    playerManager.nberMove++;
+    a.value=playerManager.nberMove;
+
     var moveTo = findTile(indexMoveTo);
     swap2Tiles(current, moveTo);
     //redraw updated board

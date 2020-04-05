@@ -1,30 +1,16 @@
-#allSection {
-  height: 70%;
-}
-
 #gameSetup {
   font-weight: bold;
   font-size: 20;
   padding-left: 5%;
 }
 
-#leftSection, #rightSection {
-  border: 2px solid darkcyan;
-  height: 100%;
+#playerInfoFld, #gameStatsFld, #gameProgressFld {
+  width: 90%;
+  margin-left: 5%;
+  padding: 3%;
 }
 
-#leftSection {
-  width: 30%;
-  float: left;
-  background-color: lightblue;
-}
-
-#rightSection {
-  width: 70%;
-  float: left;
-  background-color: gainsboro;
-}
-
+/* CSS for the different buttons */
 #greenButton {
   background-color: #4CAF50;
   color: white;
@@ -41,6 +27,7 @@
   padding: 7% 7%;
   cursor: pointer;
   width: 45%;
+  margin-top: 1%;
   margin-bottom: 1%;
 }
 
@@ -60,26 +47,30 @@
   cursor: pointer;
 }
 
+#greenButton:disabled {
+  background-color: green;
+  opacity: 0.5;
+  cursor: default;
+}
+
+#redButton:disabled {
+  background-color: red;
+  opacity: 0.5;
+  cursor: default;
+}
+
+/* CSS for displayting the Game Progress */
 #playerName, #puzzleDim, #nameInput, #dimensionList {
   margin: 2px;
-  
 }
 
-#hoursLabel, #minutesLabel, #secondsLabel {
+#hoursLabel, #minutesLabel, #secondsLabel, #movesLabel, #displayHours, #displayMinutes, #displaySeconds, #displayMoves {
+  display: inline-block;
   margin-left: 9%;
-  margin-right: 7%;
-  width: 10%;
+  width: 12%;
 }
 
-#displayHours, #displayMinutes, #displaySeconds {
-  width: 10%;
-  margin-left: 10%;
-}
-
-#displayMoves {
-  width: 10%;
-}
-
+/* CSS for the leaderboard in game stats */
 #leaderboards {
   display: none;
   float: left;
@@ -88,12 +79,20 @@
 }
 
 #leaderboardsTable, #leaderboardsTable td, #leaderboards th {
+  table-layout: fixed;
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
   border-collapse: collapse;
   width: 100%;
   border: 3px solid black;
   text-align: center;
+  max-width: 100%;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
-#headerID{
-  width: 10%;
+
+/* CSS for the two tabs */
+.tab {
+  background-color: lightgray;
+  height: 10%;
 }
